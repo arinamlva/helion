@@ -18,7 +18,7 @@ python3 -m http.server 8000
 1. Создайте репозиторий и загрузите содержимое этой папки в корень.
 2. Settings → Pages → Source: «Deploy from a branch», ветка `main`, папка `/ (root)`.
 3. Сайт откроется по адресу `https://<логин>.github.io/<репозиторий>/`.
-4. Замените адрес-заглушку `https://example.com/` на реальный в `index.html` (og:url, og:image, canonical, JSON-LD), `robots.txt` и `sitemap.xml`.
+4. Адреса в `index.html`, `robots.txt` и `sitemap.xml` указывают на https://arinamlva.github.io/helion/ — при переезде на свой домен замените их.
 
 ## Структура
 
