@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HELION. Добыча гелия-3 на Луне</title>
+<meta name="description" content="HELION готовит добычу гелия-3 у южного полюса Луны. Идёт разведка и испытания опытной печи.">
+<meta name="theme-color" content="#080A0D">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HELION. Лунные ресурсы для энергетики">
+<meta property="og:description" content="HELION готовит добычу гелия-3 у южного полюса Луны.">
+<!-- DEPLOY STEP: put the live address into og:url, og:image, canonical, the JSON-LD block, robots.txt and sitemap.xml -->
+<meta property="og:url" content="https://example.com/">
+<meta property="og:image" content="https://example.com/assets/station.jpg">
+<link rel="canonical" href="https://example.com/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "HELION", "alternateName": "HELION Lunar Mining Corporation", "description": "Вымышленная компания, концепт сайта. HELION готовит добычу гелия-3 у южного полюса Луны.", "url": "https://example.com/", "logo": "https://example.com/assets/station.jpg", "foundingDate": "2026"}</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23080A0D'/%3E%3Ccircle cx='32' cy='32' r='15' fill='none' stroke='%23F5F6F7' stroke-width='3'/%3E%3Cellipse cx='32' cy='32' rx='27' ry='9' fill='none' stroke='%23FFCB2E' stroke-width='2.5' transform='rotate(-24 32 32)'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Unbounded:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script>
+(function(){var d=document.documentElement;d.classList.add('js');
+try{if(localStorage.getItem('helion-motion')==='off')d.classList.add('motion-off');
+}catch(e){}})();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержанию</a>
+<div class="env" aria-hidden="true"></div>
+
+<div class="reticle" id="reticle" aria-hidden="true"><i></i></div>
+
+<nav class="nav" id="nav" aria-label="Основная навигация">
+  <a class="brand" href="#top" aria-label="HELION, на главную"><b>HELION</b><span>Lunar Mining Corporation</span></a>
+  <div class="nav-links" id="nav-links">
+    <a href="#mission">Миссия</a>
+    <a href="#helium3">Гелий-3</a>
+    <a href="#technology">Технология</a>
+    <a href="#base">Инфраструктура</a>
+    <a href="#atlas">Карта Луны</a>
+    <a href="#investors">Инвесторам</a>
+    <a href="#news">Новости</a>
+  </div>
+  <div class="nav-tools">
+    <button class="icon-btn" id="sound-btn" type="button" aria-pressed="false" title="Фоновый звук станции"><span class="dot"></span><span class="t">Звук</span></button>
+    <button class="icon-btn" id="motion-btn" type="button" aria-pressed="true" title="Включить или отключить анимации"><span class="dot"></span><span class="t">Анимации</span></button>
+    <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">Меню</button>
+  </div>
+</nav>
+
+<main id="main" tabindex="-1">
+
+<section class="hero" id="top" aria-label="Спуск к лунной базе">
+  <div class="stage" id="stage">
+    <div class="poster" id="poster" aria-hidden="true"></div>
+    <video class="hero-video" id="hero-video" preload="none" muted playsinline aria-hidden="true" tabindex="-1"></video>
+    <div class="scrim" aria-hidden="true"></div>
+
+    <div class="band b1" data-a="0" data-b="0.16" data-fx="approach">
+      <h1 class="hl">Лунные ресурсы для энергетики будущего</h1>
+      <p class="sub">Разведка и подготовка добычи гелия-3 у южного полюса Луны.</p>
+      <div class="row"><a class="btn primary" href="#contact" data-interest="Инвестиции">Запросить презентацию</a><a class="btn" href="#base">Инфраструктура</a></div>
+    </div>
+    <div class="band b2" data-a="0.2" data-b="0.38" data-fx="drift">
+      <p class="hl" data-split="w">Южный полюс Луны.</p>
+      <p class="sub">На дно здешних кратеров не попадает солнечный свет. Температура там около −230 °C.</p>
+    </div>
+    <div class="band b3" data-a="0.42" data-b="0.6" data-fx="scatter">
+      <p class="hl" data-split="c">Гелия-3 на Земле почти нет.</p>
+      <p class="sub">Его получают по несколько килограммов в год. В лунном грунте он копился миллиарды лет.</p>
+    </div>
+    <div class="band b4" data-a="0.64" data-b="0.82" data-fx="grid" data-spread="0.5">
+      <p class="hl" data-split="c">Мы готовим его добычу.</p>
+      <p class="sub">Сначала разведка и опытная печь, потом комплекс, который работает без людей.</p>
+    </div>
+    <div class="band b5" data-a="0.86" data-b="1" data-fx="rise">
+      <p class="hl" data-split="w">Опытный комплекс HELION.</p>
+      <p class="sub">Гребень между кратерами Шеклтон и де Жерлаш, 89,5° южной широты.</p>
+      <div class="row">
+        <a class="btn" href="#base">Инфраструктура</a>
+        <a class="btn primary" href="#contact" data-interest="Инвестиции">Запросить презентацию</a>
+      </div>
+    </div>
+
+    <div class="hud" aria-hidden="true">
+      <div class="hud-status">
+        <span class="chip"><span class="pulse"></span>Этап: <b>разведка</b></span>
+        <span class="chip">Площадка: <b>южный полюс Луны</b></span>
+      </div>
+      <div class="alt">
+        <div class="alt-rail"></div>
+        <div class="alt-mark" id="alt-mark"><div class="alt-read chip"><small>Высота</small><b id="alt-val">100,0 км</b></div></div>
+      </div>
+      <div class="cue chip" id="cue"><i></i>Листайте вниз</div>
+    </div>
+    <svg class="ring" id="ring" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="126" style="stroke-dashoffset:var(--ld,126)"/></svg>
+  </div>
+
+  <div class="static-hero">
+    <div class="hud-line" aria-hidden="true">
+      <span class="chip"><span class="pulse"></span>Этап: разведка</span>
+      <span class="chip">Южный полюс Луны</span>
+    </div>
+    <h1>Лунные ресурсы для энергетики будущего</h1>
+    <p>HELION готовит добычу гелия-3 у южного полюса Луны. Сейчас идёт разведка и испытания опытной печи.</p>
+    <div class="cta-row"><a class="btn primary" href="#contact" data-interest="Инвестиции">Запросить презентацию</a></div>
+  </div>
+</section>
+
+<section class="sec reveal" id="mission">
+  <div class="mission-top">
+    <div class="sec-head" style="margin:0">
+      <h2 class="rv" style="--i:1">Мы готовим добычу гелия-3 на Луне.</h2>
+    </div>
+    <p class="lede rv" style="--i:2">До первой партии нужно пройти разведку и построить опытную установку. Компания основана в 2026 году. Сейчас мы собираем орбитальный картограф и испытываем печь на имитаторе лунного грунта. Промышленной добычи у нас пока нет.</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat rv" style="--i:1"><b><span data-count="10" data-pre="~">~10</span> ppb</b><p>Столько гелия-3 в лунном грунте по образцам «Аполлона». Это десять частей на миллиард.</p></div>
+    <div class="stat rv" style="--i:2"><b><span data-count="100" data-pre="~">~100</span> т</b><p>Грунта нужно переработать ради одного грамма гелия-3.</p></div>
+    <div class="stat rv" style="--i:3"><b><span data-count="2034" data-plain="1">2034</span></b><p>Целевой год первой опытной партии для лабораторий на Земле.</p></div>
+  </div>
+
+  <figure class="plate rv" style="--i:2">
+    <img src="assets/station.jpg" alt="Опытный комплекс HELION: реакторный корпус, хранилища, жилые модули и солнечные панели, над горизонтом Земля" loading="lazy" width="1920" height="1086">
+    <div class="scan" aria-hidden="true"></div>
+    <figcaption class="plate-cap">Опытный комплекс, 89,5° ю. ш. Визуализация проекта.</figcaption>
+  </figure>
+</section>
+<div class="rule"></div>
+
+<section class="sec reveal" id="helium3">
+  <div class="he">
+    <div class="atom-wrap rv" id="atom-wrap">
+      <svg class="atom" id="atom" viewBox="0 0 500 500" role="img" aria-label="Атом гелия-3: два протона, один нейтрон, два электрона">
+        <defs>
+          <radialGradient id="a-p" cx="35%" cy="30%"><stop offset="0" stop-color="#4d3c10"/><stop offset="1" stop-color="#17130a"/></radialGradient>
+          <radialGradient id="a-n" cx="35%" cy="30%"><stop offset="0" stop-color="#2e3640"/><stop offset="1" stop-color="#11151b"/></radialGradient>
+          <radialGradient id="a-h"><stop offset="0" stop-color="#FFCB2E" stop-opacity=".3"/><stop offset="1" stop-color="#FFCB2E" stop-opacity="0"/></radialGradient>
+          <filter id="a-g" x="-300%" y="-300%" width="700%" height="700%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <circle class="halo" cx="250" cy="250" r="104" fill="url(#a-h)">
+          <animate attributeName="r" values="92;112;92" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1"/>
+          <animate attributeName="opacity" values=".85;.45;.85" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1"/>
+        </circle>
+        <g transform="rotate(-28 250 250)">
+          <path id="a-o1" class="orbit" d="M58 250A192 70 0 1 1 442 250A192 70 0 1 1 58 250"/>
+          <circle class="electron hit" tabindex="0" r="6.5" data-tip="Электрон, 2 шт. Отрицательный заряд"><animateMotion dur="12s" repeatCount="indefinite"><mpath href="#a-o1" xlink:href="#a-o1"/></animateMotion></circle>
+        </g>
+        <g transform="rotate(28 250 250)">
+          <path id="a-o2" class="orbit" d="M58 250A192 70 0 1 1 442 250A192 70 0 1 1 58 250"/>
+          <circle class="electron hit" tabindex="0" r="6.5" data-tip="Электрон, 2 шт. Отрицательный заряд"><animateMotion dur="16s" begin="-5s" repeatCount="indefinite"><mpath href="#a-o2" xlink:href="#a-o2"/></animateMotion></circle>
+        </g>
+        <g class="neutron hit" tabindex="0" data-tip="Нейтрон, 1 шт. Без заряда"><circle cx="250" cy="276" r="27"/><text x="250" y="276">n</text></g>
+        <g class="proton hit" tabindex="0" data-tip="Протон, 2 шт. Положительный заряд"><circle cx="228" cy="238" r="27"/><text x="228" y="238">p+</text></g>
+        <g class="proton hit" tabindex="0" data-tip="Протон, 2 шт. Положительный заряд"><circle cx="272" cy="238" r="27"/><text x="272" y="238">p+</text></g>
+        <text class="sym-sup" x="392" y="104">3</text><text class="sym" x="408" y="122">He</text>
+      </svg>
+      <div class="tip chip" id="atom-tip" aria-hidden="true"></div>
+    </div>
+    <div>
+      <div class="sec-head">
+        <h2 class="rv" style="--i:1">Свойства и применение гелия-3</h2>
+        <p class="muted rv" style="--i:2">Наведите курсор на атом или выберите вопрос.</p>
+      </div>
+      <div class="tabs rv" style="--i:3">
+        <div class="tab open"><h3><button class="tab-head" type="button" aria-expanded="true" aria-controls="tp01"><span class="tt">Что такое гелий-3</span></button></h3>
+          <div class="tab-panel" id="tp01"><div><p>Изотоп гелия с двумя протонами и одним нейтроном. Стабилен, не радиоактивен, на Земле его получают при распаде трития.</p></div></div></div>
+        <div class="tab"><h3><button class="tab-head" type="button" aria-expanded="false" aria-controls="tp02"><span class="tt">Зачем он термояду</span></button></h3>
+          <div class="tab-panel" id="tp02"><div><p>В реакции дейтерия с гелием-3 почти не образуется нейтронов, поэтому стенки реактора меньше облучаются. Но ей нужно около 600 миллионов градусов, и такого реактора пока никто не построил.</p></div></div></div>
+        <div class="tab"><h3><button class="tab-head" type="button" aria-expanded="false" aria-controls="tp03"><span class="tt">Почему его ищут на Луне</span></button></h3>
+          <div class="tab-panel" id="tp03"><div><p>У Луны нет атмосферы и магнитного поля, поэтому частицы солнечного ветра долетают до поверхности и застревают в грунте. В образцах, которые привезли экипажи «Аполлонов», гелия-3 около десяти частей на миллиард.</p></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hold" id="heat" aria-label="Попробуйте сами: нагрев лунного камня">
+  <div class="hold-in">
+    <div class="hold-copy">
+      <h2>Нагрейте лунный камень</h2>
+      <p class="muted">Удерживайте кнопку, пока температура не дойдёт до 700 °C. Отпустите раньше, и камень остынет.</p>
+    </div>
+    <button class="hold-btn" id="hold-btn" type="button" aria-describedby="hold-state">
+      <svg viewBox="0 0 200 200" aria-hidden="true"><circle class="track" cx="100" cy="100" r="92"/><circle class="prog" cx="100" cy="100" r="92"/></svg>
+      <span class="hold-core">
+        <img class="hold-cold" src="assets/rock-cold.jpg" alt="" loading="lazy" width="560" height="560">
+        <img class="hold-hot" src="assets/rock-hot.jpg" alt="" loading="lazy" width="560" height="560">
+        <video id="hold-video" muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+      </span>
+      <span class="hold-read"><b id="hold-temp">−170 °C</b><span id="hold-label">Удерживайте, чтобы нагреть</span></span>
+    </button>
+    <div>
+      <p class="sr" id="hold-state" aria-live="polite"></p>
+      <ul class="hold-out">
+        <li><b>100 т</b><span>лунного грунта прошло через печь</span></li>
+        <li><b>700 °C</b><span>газы вышли из частиц грунта</span></li>
+        <li><b>1 г</b><span>гелия-3 осталось после разделения</span></li>
+      </ul>
+      <p class="hold-result" style="margin-top:20px">Из 100 тонн грунта вышел один грамм гелия-3. Вручную столько не перекопать, поэтому на площадке работают автоматы.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec reveal" id="technology">
+  <div class="sec-head">
+    <h2 class="rv" style="--i:1;max-width:22ch">Технология извлечения гелия-3</h2>
+    <p class="muted rv" style="--i:2">Шесть этапов. Выберите любой, и схема приблизится к оборудованию.</p>
+  </div>
+  <div class="proc-frame rv" style="--i:2" id="proc-frame">
+    <svg class="proc-svg" id="proc-svg" viewBox="0 0 1200 440" role="group" aria-label="Схема добычи гелия-3 из шести этапов">
+      <path class="ground draw" style="--len:1700" d="M-240 342 C-120 340 -40 344 60 342 S210 340 300 342 S470 344 560 342 S740 340 830 342 S1010 344 1100 342 S1300 340 1440 342"/>
+      <path class="ln thin" d="M-240 364 H1440 M-240 392 H1440" stroke-dasharray="2 10"/>
+      <path class="pipe" d="M394 336 H462 M556 336 H662 M718 336 H826 M914 336 H994"/>
+
+      <g class="st on" data-i="0" tabindex="0" role="button" aria-label="Этап 1. Разведка">
+        <rect x="60" y="180" width="190" height="170" fill="transparent"/>
+        <path class="ln thin" d="M150 252 L112 340 M150 252 L188 340" stroke-dasharray="3 6"/>
+        <path class="ln" d="M133 228 H73 M133 233 H73 M167 228 H227 M167 233 H227"/>
+        <path class="ln thin" d="M88 228v5 M103 228v5 M118 228v5 M182 228v5 M197 228v5 M212 228v5"/>
+        <rect class="fillp" x="133" y="215" width="34" height="31"/>
+        <path class="ln thin" d="M133 219H167 M133 242H167 M139 219V242 M145 219V242 M151 219V242 M157 219V242 M163 219V242 M133 230.5H167"/>
+        <circle class="fillp" cx="150" cy="230.5" r="2.4"/>
+        <path class="ln" d="M138 215v-2h24v2 M150 213V193 M148 193h4l-1-3h-2z"/>
+        <path class="ln" d="M141 246v2h18v-2 M136 246l-1.5 4h4l-1.5-4 M164 246l-1.5 4h4l-1.5-4"/>
+        <rect class="fillp" x="62" y="225" width="11" height="11" rx="1.5"/>
+        <rect class="fillp key" x="227" y="225" width="9" height="11"/>
+        <path class="fillp key" d="M236 226.5h8v3h-8z M236 231.5h8v3h-8z"/>
+        <rect class="fillp" x="140" y="327" width="20" height="7"/>
+        <circle class="fillp" cx="144" cy="337" r="3.5"/><circle class="fillp" cx="156" cy="337" r="3.5"/>
+        <path class="ln" d="M154 327v-9 M151 318h6 M150 334v9"/>
+        <text class="lbl" x="150" y="410">01 РАЗВЕДКА</text>
+        <g class="an">
+          <text class="at2" x="150" y="184" text-anchor="middle">Прототип картографа: Lunar Prospector, NASA, 1998</text>
+          <path class="dm" d="M133 257H167 M133 254.5v5 M167 254.5v5"/><text class="dt" x="150" y="264">⌀ 1,4 м</text>
+          <path class="dm" d="M73 242H133 M73 239.5v5 M133 239.5v5"/><text class="dt" x="103" y="249">2,5 м</text>
+          <path class="ld" d="M236 225V208H228"/><text class="at ah" x="226" y="206" text-anchor="end">Нейтронный спектрометр</text><text class="at2" x="226" y="212" text-anchor="end">ищет водород и гелий в грунте</text>
+          <path class="ld" d="M67 225V208H75"/><text class="at" x="77" y="206">Гамма-спектрометр</text><text class="at2" x="77" y="212">состав пород, титан</text>
+          <path class="ld" d="M160 330L176 318H182"/><text class="at" x="184" y="317">Ровер с буром</text><text class="at2" x="184" y="323">пробы с глубины до 2 м</text>
+          <text class="at2" x="182" y="290">орбита 100 км</text>
+        </g>
+      </g>
+
+      <g class="st" data-i="1" tabindex="0" role="button" aria-label="Этап 2. Выемка">
+        <rect x="245" y="180" width="170" height="170" fill="transparent"/>
+        <path class="ln thin" d="M266 342l6 7h12l5-7 M386 342q8-9 16 0"/>
+        <path class="fillp key" d="M300 309L274 333a5 5 0 0 0 7 7L307 316z"/>
+        <path class="ln thin" d="M283 322l-3-3 M277 328l-3-3 M289 316l-3-3 M295 311l-3-3"/>
+        <rect class="fillp" x="300" y="300" width="72" height="20" rx="2"/>
+        <circle class="fillp" cx="303.5" cy="312.5" r="3"/><circle class="fillp" cx="277.5" cy="336.5" r="3"/>
+        <rect class="fillp" x="312" y="295" width="34" height="5"/>
+        <path class="ln thin" d="M318 295v5 M324 295v5 M330 295v5 M336 295v5 M342 295v5 M362 300V268"/>
+        <path class="ln" d="M356 300V280"/><rect class="fillp" x="351" y="274" width="10" height="6"/>
+        <path class="ln" d="M372 304L390 294 M372 310L392 299 M390 294L392 299"/>
+        <circle class="fillp" cx="314" cy="328" r="12"/><circle class="ln thin" cx="314" cy="328" r="8"/><path class="ln thin" d="M302 328h24 M314 316v24 M305 319l17 17 M322 319l-17 17"/><circle class="fillp" cx="314" cy="328" r="2.5"/><circle class="fillp" cx="358" cy="328" r="12"/><circle class="ln thin" cx="358" cy="328" r="8"/><path class="ln thin" d="M346 328h24 M358 316v24 M349 319l17 17 M366 319l-17 17"/><circle class="fillp" cx="358" cy="328" r="2.5"/>
+        <text class="lbl" x="330" y="410">02 ВЫЕМКА</text>
+        <g class="an">
+          <text class="at2" x="330" y="184" text-anchor="middle">Прототипы: харвестер Interlune и Vermeer, экскаватор NASA RASSOR</text>
+          <text class="at2" x="330" y="191" text-anchor="middle">до 100 т грунта в час, заявлено для прототипа Interlune</text>
+          <path class="ld" d="M286 326L262 300H258"/><text class="at ah" x="256" y="298" text-anchor="end">Цепной рабочий орган</text><text class="at2" x="256" y="304" text-anchor="end">снимает слой до 3 м</text>
+          <path class="ld" d="M368 334L394 326H398"/><text class="at" x="400" y="325">Сетчатые колёса</text><text class="at2" x="400" y="331">как у лунных роверов</text>
+          <path class="ld" d="M356 274L366 258H370"/><text class="at" x="372" y="257">Без кабины</text><text class="at2" x="372" y="263">ведёт автопилот</text>
+        </g>
+      </g>
+
+      <g class="st" data-i="2" tabindex="0" role="button" aria-label="Этап 3. Переработка">
+        <rect x="425" y="180" width="170" height="170" fill="transparent"/>
+        <path class="ln" d="M452 238q-16 24 0 48 M444 262h-6 M438 262V342 M433 342h10"/>
+        <path class="ln thin" d="M453 246L488 284 M453 278L488 292" stroke-dasharray="3 5"/>
+        <path class="ln" d="M474 236V342 M546 236V342 M474 252H546 M474 328H546 M470 342h8 M542 342h8"/>
+        <path class="ln" d="M524 242V230q0-6 6-6h8q6 0 6 6V262 M519 242V227q0-8 8-8h14q8 0 8 8V262"/>
+        <rect class="fillp" x="538" y="262" width="14" height="10"/>
+        <path class="fillp" d="M496 222h28l-8 20h-12z"/>
+        <rect class="fillp" x="490" y="242" width="40" height="76" rx="6"/>
+        <path class="ln thin" d="M490 258H530 M490 302H530"/>
+        <path class="fillp" d="M500 318h20l-6 14h-8z"/>
+        <path class="ln" d="M482 276V266H490 M482 302V310H490 M482 254v6"/>
+        <rect class="fillp" x="478" y="276" width="8" height="26" rx="3"/>
+        <circle class="fillp" cx="482" cy="250" r="4"/><path class="ln thin" d="M482 250l2-2"/>
+        <circle class="glow" cx="510" cy="286" r="5.5"/>
+        <circle class="ln key" cx="510" cy="286" r="8.5"/>
+        <text class="lbl" x="510" y="410">03 ПЕРЕРАБОТКА</text>
+        <g class="an">
+          <text class="at2" x="510" y="184" text-anchor="middle">Прототип печи: стенд HEAT, Университет Висконсина</text>
+          <path class="dm" d="M560 242V318 M557.5 242h5 M557.5 318h5"/><text class="dt" x="570" y="282">1 м</text>
+          <path class="ld" d="M510 222L520 206H524"/><text class="at" x="526" y="205">Загрузка грунта</text>
+          <path class="ld" d="M518 289L566 308H570"/><text class="at ah" x="572" y="307">Нагрев до 700 °C</text><text class="at2" x="572" y="313">газы выходят из грунта</text>
+          <path class="ld" d="M446 244L440 214H436"/><text class="at" x="434" y="213" text-anchor="end">Зеркало</text><text class="at2" x="434" y="219" text-anchor="end">собирает солнечное тепло</text>
+        </g>
+      </g>
+
+      <g class="st" data-i="3" tabindex="0" role="button" aria-label="Этап 4. Разделение">
+        <rect x="605" y="180" width="170" height="170" fill="transparent"/>
+        <path class="ln" d="M668 204V342 M712 204V342 M668 220H712 M668 300H712 M664 342h8 M708 342h8"/>
+        <path class="ln" d="M686 208V200q0-5-5-5h-3q-5 0-5 5V236 M696 234H704V306H696 M690 316V322"/>
+        <rect class="fillp" x="681" y="208" width="18" height="16" rx="2"/>
+        <rect class="fillp" x="684" y="224" width="12" height="92" rx="4"/>
+        <path class="ln thin" d="M682 240H698 M682 270H698 M682 300H698"/>
+        <path class="fillp" d="M701 253l6 6h-6l6-6z M701 287l6 6h-6l6-6z"/>
+        <circle class="fillp" cx="704" cy="272" r="3.5"/><path class="ln thin" d="M704 272l1.6-1.6"/>
+        <rect class="fillp key" x="683" y="322" width="14" height="14" rx="4"/>
+        <text class="lbl" x="690" y="410">04 РАЗДЕЛЕНИЕ</text>
+        <g class="an">
+          <text class="at2" x="690" y="184" text-anchor="middle">Прототипа для Луны нет. Показана лабораторная криогенная колонна</text>
+          <path class="dm" d="M722 208V336 M719.5 208h5 M719.5 336h5"/><text class="dt" x="732" y="274">2 м</text>
+          <path class="ld" d="M681 214L660 204H656"/><text class="at" x="654" y="203" text-anchor="end">Криоголовка</text><text class="at2" x="654" y="209" text-anchor="end">охлаждает до −270 °C</text>
+          <path class="ld" d="M683 329L660 318H656"/><text class="at ah" x="654" y="317" text-anchor="end">Сборник гелия-3</text>
+        </g>
+      </g>
+
+      <g class="st" data-i="4" tabindex="0" role="button" aria-label="Этап 5. Хранение">
+        <rect x="785" y="180" width="170" height="170" fill="transparent"/>
+        <path class="ln" d="M832 252V342 M908 252V342 M832 252H908 M832 332H908 M828 342h8 M904 342h8"/>
+        <path class="ln thin" d="M832 252L847 269 M908 252L893 269 M832 332L847 315 M908 332L893 315"/>
+        <path class="ln" d="M870 250V242h10v6 M870 324V332"/>
+        <circle class="fillp" cx="870" cy="292" r="32"/>
+        <path class="ln thin" d="M838 292a32 9 0 0 0 64 0 M858 262q-10 30 0 60 M882 262q10 30 0 60"/>
+        <rect class="fillp key" x="866" y="250" width="8" height="10"/>
+        <circle class="fillp" cx="880" cy="250" r="2.5"/>
+        <text class="lbl" x="870" y="410">05 ХРАНЕНИЕ</text>
+        <g class="an">
+          <text class="at2" x="870" y="184" text-anchor="middle">Прототип: космические криогенные сосуды</text>
+          <path class="dm" d="M918 260V324 M915.5 260h5 M915.5 324h5"/><text class="dt" x="930" y="294">⌀ 1 м</text>
+          <path class="ld" d="M846 276L826 262H822"/><text class="at" x="820" y="261" text-anchor="end">Многослойная изоляция</text><text class="at2" x="820" y="267" text-anchor="end">держит холод</text>
+          <path class="ld" d="M874 252L890 232H894"/><text class="at ah" x="896" y="231">Клапан сброса</text>
+        </g>
+      </g>
+
+      <g class="st" data-i="5" tabindex="0" role="button" aria-label="Этап 6. Транспорт">
+        <rect x="965" y="180" width="180" height="170" fill="transparent"/>
+        <path class="ln thin" d="M1050 244C1050 170 1100 106 1160 66" stroke-dasharray="3 7"/>
+        <path class="ln" d="M1024 310L1004 338 M1076 310L1096 338 M1024 298L1010 328 M1076 298L1090 328 M1020 300L1008 290L1014 306"/>
+        <rect class="fillp" x="997" y="338" width="14" height="4" rx="2"/><rect class="fillp" x="1089" y="338" width="14" height="4" rx="2"/>
+        <path class="fillp" d="M1044 318h12l4 12h-20z"/>
+        <path class="fillp" d="M1024 292h52l4 6v14l-4 6h-52l-4-6v-14z"/>
+        <path class="ln thin" d="M1037 292V318 M1063 292V318 M1020 305H1080"/>
+        <path class="fillp" d="M1080 300l26-9l2 6l-26 9z"/>
+        <path class="ln thin" d="M1088.700 297l2 6 M1097.300 294l2 6"/>
+        <path class="fillp key" d="M1036 292v-20l5-6h18l5 6v20z"/>
+        <path class="ln thin" d="M1036 280H1064"/>
+        <path class="ln" d="M1036 276h-4 M1064 276h4 M1050 266V248 M1047 248h6"/>
+        <text class="lbl" x="1050" y="410">06 ТРАНСПОРТ</text>
+        <g class="an">
+          <text class="at2" x="1050" y="184" text-anchor="middle">Прототип: посадочный и взлётный модули «Чанъэ-5», 2020</text>
+          <path class="ld" d="M1036 276L1012 262H1008"/><text class="at ah" x="1006" y="261" text-anchor="end">Взлётный модуль</text><text class="at2" x="1006" y="267" text-anchor="end">везёт гелий-3 на орбиту</text>
+          <path class="ld" d="M1080 314L1106 320H1110"/><text class="at" x="1112" y="319">Посадочная ступень</text><text class="at2" x="1112" y="325">остаётся на Луне</text>
+        </g>
+      </g>
+          <g class="hint" id="proc-hint" aria-hidden="true">
+        <g class="hint-s"><g class="hint-in">
+          <text class="hint-t" x="0" y="-15">Подробнее</text>
+          <path class="hint-a" d="M0 -9V3M-5 -2L0 3L5 -2"/>
+        </g></g>
+      </g>
+    </svg>
+    <button class="icon-btn proc-reset" id="proc-reset" type="button">Вся схема</button>
+  </div>
+  <div class="proc-rail rv" style="--i:3" role="tablist" aria-label="Этапы добычи">
+    <button class="step" role="tab" type="button" aria-selected="true" data-i="0"><span class="n">01</span><b>Разведка</b></button>
+    <button class="step" role="tab" type="button" aria-selected="false" data-i="1"><span class="n">02</span><b>Выемка</b></button>
+    <button class="step" role="tab" type="button" aria-selected="false" data-i="2"><span class="n">03</span><b>Переработка</b></button>
+    <button class="step" role="tab" type="button" aria-selected="false" data-i="3"><span class="n">04</span><b>Разделение</b></button>
+    <button class="step" role="tab" type="button" aria-selected="false" data-i="4"><span class="n">05</span><b>Хранение</b></button>
+    <button class="step" role="tab" type="button" aria-selected="false" data-i="5"><span class="n">06</span><b>Транспорт</b></button>
+  </div>
+  <div class="proc-detail swap rv" style="--i:4" id="proc-detail" aria-live="polite">
+    <p id="proc-main">Орбитальный картограф и ровер ищут участки, где гелия-3 больше обычного.</p>
+  </div>
+</section>
+<div class="rule"></div>
+
+<section class="sec reveal" id="base">
+  <div class="sec-head">
+    <h2 class="rv" style="--i:1;max-width:20ch">Состав опытного комплекса</h2>
+    <p class="muted rv" style="--i:2">Поверните модель и выберите объект. Показатели проектные.</p>
+  </div>
+  <div class="base-stage rv" style="--i:2" id="base-stage">
+    <canvas id="base-canvas" role="img" aria-label="Трёхмерная модель комплекса HELION. Объекты доступны кнопками с номерами."></canvas>
+    <div id="base-markers"></div>
+    <div class="base-card chip swap" id="base-card" aria-live="polite">
+      <span class="n" id="base-n">01 / 06</span>
+      <h3 id="base-title">Добывающая станция</h3>
+      <p id="base-text">Сюда харвестеры привозят грунт и здесь же заряжаются.</p>
+      <dl id="base-spec"><dt>Флот</dt><dd>4 харвестера</dd><dt>Режим</dt><dd>без экипажа</dd></dl>
+    </div>
+    <div class="base-hint chip" aria-hidden="true">Тяните, чтобы вращать</div>
+  </div>
+</section>
+
+<section class="sec reveal" id="atlas">
+  <div class="sec-head">
+    <h2 class="rv" style="--i:1">Карта Луны</h2>
+    <p class="muted rv" style="--i:2">Глобус можно вращать и приближать. Рельеф нарисован условно, координаты объектов настоящие.</p>
+  </div>
+  <div class="atlas">
+    <div class="atlas-side rv" style="--i:2">
+      <div class="layers" role="group" aria-label="Слои карты">
+        <button class="layer" type="button" aria-pressed="true" data-layer="terrain"><i></i>Рельеф</button>
+        <button class="layer" type="button" aria-pressed="false" data-layer="resources"><i></i>Ресурсы</button>
+        <button class="layer" type="button" aria-pressed="false" data-layer="operations"><i></i>Операции</button>
+        <button class="layer" type="button" aria-pressed="false" data-layer="infrastructure"><i></i>Инфраструктура</button>
+      </div>
+      <div class="site-card chip swap" id="site-card" aria-live="polite">
+        <h3 id="site-title">Выберите точку</h3>
+        <p id="site-text">Нажмите на маркер на глобусе или на название в списке.</p>
+        <span class="coords" id="site-coords"></span>
+      </div>
+      <div class="sites" id="sites" aria-label="Объекты слоя"></div>
+    </div>
+    <div class="globe-wrap rv" style="--i:3" id="globe-wrap">
+      <canvas id="globe" role="img" aria-label="Вращающийся глобус Луны с маркерами. Объекты доступны в списке рядом."></canvas>
+      <div class="globe-read chip" id="globe-read" aria-hidden="true">0,0° / 0,0°</div>
+      <div class="zoom">
+        <button class="icon-btn" id="zoom-in" type="button" aria-label="Приблизить">+</button>
+        <button class="icon-btn" id="zoom-out" type="button" aria-label="Отдалить">−</button>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="rule"></div>
+
+<section class="sec reveal" id="principles">
+  <div class="principles">
+    <div class="sec-head" style="align-content:start">
+      <h2 class="rv" style="--i:1">Принципы работы на Луне</h2>
+    </div>
+    <ol class="plist">
+      <li class="rv" style="--i:1"><div><h3>Грунт возвращаем</h3><p>Снимаем слой до трёх метров и после печи укладываем грунт обратно.</p></div></li>
+      <li class="rv" style="--i:2"><div><h3>Сначала наука</h3><p>Не работаем в зонах, важных для исследований, и открываем данные разведки учёным.</p></div></li>
+      <li class="rv" style="--i:3"><div><h3>Попутные газы</h3><p>Воду и водород, которые выходят из грунта вместе с гелием, пускаем на топливо.</p></div></li>
+      <li class="rv" style="--i:4"><div><h3>Отчёты</h3><p>Соблюдаем Договор о космосе 1967 года и публикуем отчёт о каждой операции.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="investors" aria-labelledby="inv-h">
+  <div class="finale reveal">
+    <img src="assets/station.jpg" alt="Опытный комплекс HELION на южном полюсе Луны, над горизонтом Земля" loading="lazy" width="1920" height="1080">
+    <div class="finale-in">
+      <h2 class="rv" style="--i:1" id="inv-h">Мы ищем инвесторов и партнёров до первой партии в 2034 году</h2>
+      <p class="lede rv" style="--i:2">До первой партии гелия-3 по плану восемь лет. Экономика добычи и термоядерный реактор на гелии-3 пока не доказаны.</p>
+      <div class="cta-row rv" style="--i:3">
+        <a class="btn primary" href="#contact" data-interest="Инвестиции">Запросить презентацию</a>
+        <a class="btn" href="#base">Инфраструктура</a>
+      </div>
+    </div>
+  </div>
+  <div class="sec reveal" style="padding-top:clamp(40px,5vw,72px)">
+    <ol class="road reveal" aria-label="Дорожная карта">
+      <li class="phase rv" style="--i:1"><span class="yr">2027 / 2029</span><h3>Разведка</h3><p>Орбитальное картирование и пробы грунта у южного полюса.</p></li>
+      <li class="phase rv" style="--i:2"><span class="yr">2030 / 2033</span><h3>Опытная установка</h3><p>Нагрев и разделение газов прямо на поверхности.</p></li>
+      <li class="phase rv" style="--i:3"><span class="yr">2034</span><h3>Первая партия</h3><p>Граммы гелия-3 для лабораторий на Земле.</p></li>
+      <li class="phase rv" style="--i:4"><span class="yr">После 2035</span><h3>Масштаб</h3><p>Решение принимаем по итогам первых трёх этапов.</p></li>
+    </ol>
+
+  </div>
+</section>
+
+<section class="partners" id="partners" aria-labelledby="partners-h">
+  <div class="partners-in">
+    <h2 id="partners-h">Партнёры</h2>
+    <ul class="logos">
+      <li class="wide"><img src="assets/partner-bulat.png" alt="Bulat Aerospace Logistics" loading="lazy" width="474" height="82"></li>
+      <li class="tall"><img src="assets/partner-ethera.png" alt="EtheraSpace" loading="lazy" width="220" height="172"></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec reveal" id="news">
+  <div class="sec-head news-head">
+    <div style="display:grid;gap:18px">
+      <h2 class="rv" style="--i:1">Новости и исследования</h2>
+    </div>
+  </div>
+  <div class="news">
+    <article class="card rv" style="--i:1">
+      <figure><img src="assets/news-1.jpg" alt="Орбитальный аппарат над поверхностью Луны" loading="lazy" width="1344" height="752"></figure>
+      <div class="card-body"><div class="card-meta"><b>Миссия</b><span>02.11.2026</span></div><h3>Картограф HELION-1 прошёл испытания</h3><p>Орбитальный спектрометр выдержал вибрационные тесты и готовится к отправке на космодром.</p></div>
+    </article>
+    <article class="card rv" style="--i:2">
+      <figure><img src="assets/news-2.jpg" alt="Опытная печь с раскалённым грунтом в лаборатории" loading="lazy" width="1344" height="752"></figure>
+      <div class="card-body"><div class="card-meta"><b>Технология</b><span>18.10.2026</span></div><h3>Опытная печь: первые 100 часов</h3><p>Опытная установка отработала на имитаторе лунного грунта без остановок.</p></div>
+    </article>
+    <article class="card rv" style="--i:3">
+      <figure><img src="assets/news-3.jpg" alt="Лунный грунт крупным планом с пробоотборником" loading="lazy" width="1344" height="752"></figure>
+      <div class="card-body"><div class="card-meta"><b>Исследование</b><span>29.09.2026</span></div><h3>Сколько гелия-3 в полярном грунте</h3><p>Аико Танака собрала опубликованные измерения и перечислила, каких данных не хватает.</p></div>
+    </article>
+  </div>
+</section>
+<div class="rule"></div>
+
+<section class="sec reveal" id="contact">
+  <div class="contact">
+    <div class="contact-copy">
+      <h2 class="rv" style="--i:1">Связаться с компанией</h2>
+      <p class="lede rv" style="--i:2">Запросите презентацию проекта. Мы ответим на указанный адрес.</p>
+      
+    </div>
+    <form class="form rv" style="--i:2" id="form" novalidate>
+      <div class="field"><label for="f-name">Имя</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" required><span class="err">Напишите имя.</span></div>
+      <div class="field"><label for="f-org">Компания</label><input id="f-org" name="org" type="text" autocomplete="organization" placeholder="Необязательно"></div>
+      <div class="field"><label for="f-mail">Эл. почта</label><input id="f-mail" name="email" type="email" autocomplete="email" placeholder="name@company.com" required><span class="err">Проверьте адрес почты.</span></div>
+      <div class="field"><label for="f-int">Что вам интересно</label><select id="f-int" name="interest"><option>Инвестиции</option><option>Партнёрство</option><option>Технологии</option><option>Пресса</option></select></div>
+      <div class="field wide"><label for="f-msg">Сообщение</label><textarea id="f-msg" name="message" placeholder="Пара слов о вашей задаче"></textarea></div>
+      <button class="btn primary" type="submit">Запросить презентацию <span class="arr" aria-hidden="true">→</span></button>
+      <p class="form-note">Демонстрационная форма. Данные никуда не отправляются.</p>
+      <div class="form-ok" role="status" aria-live="polite" tabindex="-1" id="form-ok">
+        <svg viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="25"/><path d="M16 28l8 8 15-17"/></svg>
+        <h3>Запрос принят.</h3>
+        <p>Это демонстрационный сайт, поэтому письмо никуда не ушло.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div>
+      <a class="brand" href="#top"><b>HELION</b><span>Lunar Mining Corporation</span></a>
+      <p>HELION вымышленная компания, сайт сделан как концепт. Изображения сгенерированы ИИ. Сведения о гелии-3 настоящие, планы и показатели компании придуманы.</p>
+    </div>
+    <nav aria-label="Разделы">
+      <h3>Компания</h3>
+      <ul><li><a href="#mission">Миссия</a></li><li><a href="#technology">Технология</a></li><li><a href="#base">Инфраструктура</a></li><li><a href="#principles">Принципы</a></li></ul>
+    </nav>
+    <nav aria-label="Ещё">
+      <h3>Материалы</h3>
+      <ul><li><a href="#helium3">Гелий-3</a></li><li><a href="#atlas">Карта Луны</a></li><li><a href="#investors">Инвесторам</a></li><li><a href="#news">Новости</a></li><li><a href="#contact">Контакт</a></li></ul>
+    </nav>
+  </div>
+  <div class="foot-base"><span>© 2026 HELION</span><span>Луна / Южный полюс</span></div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>
