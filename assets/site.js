@@ -10,16 +10,10 @@
   function rng(seed) { var s = seed >>> 0; return function () { return (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296; }; }
   var DEG = Math.PI / 180;
 
-  /* Motion mode: five gates plus the manual switch */
-  var GATES = [
-    '(max-width: 720px)',
-    '(orientation: portrait) and (max-width: 1024px)',
-    '(orientation: portrait) and (pointer: coarse)',
-    '(orientation: landscape) and (pointer: coarse) and (max-height: 560px)',
-    '(prefers-reduced-motion: reduce)'
-  ];
+  /* Motion mode: reduced-motion preference plus the manual switch */
+  var GATES = ['(prefers-reduced-motion: reduce)'];
   var MQLS = GATES.map(function (q) { return matchMedia(q); });
-  var RM = MQLS[4];
+  var RM = MQLS[0];
   var manualOff = function () { return root.classList.contains('motion-off'); };
   var heroStatic = function () { return manualOff() || MQLS.some(function (m) { return m.matches; }); };
   var noMotion = function () { return manualOff() || RM.matches; };
@@ -62,9 +56,11 @@
 
   /* Hero scrub */
   var hero = $('#top'), stage = $('#stage'), video = $('#hero-video'), posterLayer = $('#poster'), ring = $('#ring');
-  var VIDEO_URL = 'assets/hero-scrub.mp4';
-  var VIDEO_BYTES = 11125928; // real byte size of the encoded file, the fallback when Content-Length is missing
-  var POSTER_URL = 'assets/hero-poster.jpg';
+  // portrait screens get a vertical cut with the pan baked in (540x960, lighter to decode on phones)
+  var PORTRAIT = matchMedia('(orientation: portrait)').matches;
+  var VIDEO_URL = PORTRAIT ? 'assets/hero-scrub-m.mp4' : 'assets/hero-scrub.mp4';
+  var VIDEO_BYTES = PORTRAIT ? 2965460 : 11125928; // real byte sizes, the fallback when Content-Length is missing
+  var POSTER_URL = PORTRAIT ? 'assets/hero-poster-m.jpg' : 'assets/hero-poster.jpg';
   var altMark = $('#alt-mark'), altVal = $('#alt-val'), cue = $('#cue'), nav = $('#nav');
 
   // split headlines once, with seeded offsets

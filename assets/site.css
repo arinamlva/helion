@@ -183,14 +183,35 @@ html.booting body{overflow:hidden}
 @media (max-height:560px){.cue,.hud-status,.alt{display:none}}
 @media (max-width:1100px){.cue{display:none}}
 
-/* Static hero: shown under the five gates and with motion switched off */
+/* Hero on phones and portrait tablets: same scrub, vertical video, captions full width */
+.stage{height:100vh;height:100lvh}
+@media (orientation: portrait){
+  .hero{height:800vh}
+}
+@media (max-width:720px){
+  .stage{--bar:0px}
+  @supports (height:100svh){.stage{--bar:calc(100lvh - 100svh)}}
+  .band,.b1,.b4,.b5{width:auto;right:var(--pad)}
+  .band::before{opacity:calc(.35 + .65*var(--k,1));background:linear-gradient(0deg,rgba(4,5,8,.78) 0%,rgba(4,5,8,.55) 45%,rgba(4,5,8,0) 85%);top:-60vh;bottom:-100vh}
+  .band{top:auto;bottom:calc(44px + var(--bar) + env(safe-area-inset-bottom));transform:none}
+  .b1,.b5{bottom:calc(40px + var(--bar) + env(safe-area-inset-bottom))}
+  .band .hl,.b1 .hl,.b4 .hl{font-size:clamp(24px,7.4vw,34px)}
+  .band .sub{margin-top:14px;font-size:16px}
+  .band .row{margin-top:20px;gap:10px}
+  .band .row .btn{flex:1 1 auto;justify-content:center}
+  .alt{display:none}
+  .hud-status{display:none}
+  .ring{top:76px}
+}
+
+/* Static hero: shown with reduced motion or motion switched off */
 .static-hero{display:none;position:relative;min-height:100svh;padding:120px var(--pad) 56px;align-content:end;gap:18px;background-color:var(--canvas);background-size:cover;background-position:center;isolation:isolate}
 .static-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,10,13,.5) 0%,rgba(8,10,13,.1) 30%,rgba(8,10,13,.82) 78%,var(--canvas) 100%)}
 .static-hero h1{font-family:var(--display);font-weight:500;font-size:clamp(28px,7vw,56px);line-height:1.1;text-transform:uppercase;text-shadow:var(--tshadow);max-width:16ch}
 .static-hero p{font-size:18px;color:var(--titanium);max-width:40ch;text-shadow:var(--tshadow)}
 .static-hero .hud-line{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--titanium);display:flex;flex-wrap:wrap;gap:8px}
 .static-hero .hud-line .chip{padding:7px 10px;display:flex;gap:8px;align-items:center}
-@media (max-width: 720px),(orientation: portrait) and (max-width: 1024px),(orientation: portrait) and (pointer: coarse),(orientation: landscape) and (pointer: coarse) and (max-height: 560px),(prefers-reduced-motion: reduce){
+@media (prefers-reduced-motion: reduce){
   .hero{height:auto}
   .stage{display:none}
   .static-hero{display:grid;background-image:url("station.jpg")}

@@ -24,7 +24,8 @@ python3 -m http.server 8000
 
 - `index.html` — страница целиком
 - `assets/site.css`, `assets/site.js` — стили и скрипты
-- `assets/hero-scrub.mp4`, `assets/hero-poster.jpg` — видео первого экрана (прокручивается скроллом)
+- `assets/hero-scrub.mp4`, `assets/hero-poster.jpg` — видео первого экрана для горизонтальных экранов (прокручивается скроллом)
+- `assets/hero-scrub-m.mp4`, `assets/hero-poster-m.jpg` — вертикальная версия для телефонов, с панорамой от Земли к станции
 - `assets/rock-*.{jpg,mp4}` — блок «Нагрейте лунный камень»
 - `assets/station.jpg`, `news-*.jpg`, `partner-*.png` — изображения
 
